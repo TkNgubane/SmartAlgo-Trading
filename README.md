@@ -57,6 +57,7 @@ import MetaTrader5 as mt5
 Connecting to your trading platform
 
 '''python
+
 try:     
     my_login = 0000000
     my_password = 'your_password'
@@ -75,17 +76,16 @@ try:
         print("Failed to connect at account #{}, error code: {}".format(my_login, mt5.last_error()))
 except:
     print("\n\n\n---Could not connect to Metatrader---")
+
 '''
 
 
-### Support and Resistance
-
 ### [Engulfing](https://www.babypips.com/forexpedia/engulfing-pattern)
 
-'isEngulfing' function takes a single argument 'l' and checks if a given candlestick chart pattern is an engulfing candle pattern. The function calculates the difference between the open and close prices of the current and previous candlestick and applies criteria to determine if the current candlestick is a bullish or bearish engulfing pattern. The function returns 1 for a bullish engulfing pattern, 2 for a bearish engulfing pattern, or 0 if none of the criteria are met.
+*isEngulfing* function takes a single argument *l* and checks if a given candlestick chart pattern is an engulfing candle pattern. The function calculates the difference between the open and close prices of the current and previous candlestick and applies criteria to determine if the current candlestick is a bullish or bearish engulfing pattern. 
+The function returns 1 for a bullish engulfing pattern, 2 for a bearish engulfing pattern, or 0 if none of the criteria are met.
 
 ![Engulfing Candle](./Media/engulfing-candle.png)
-
 
 '''python
 
@@ -115,7 +115,7 @@ def isEngulfing(l):
 
 ### [Shooting Star](https://www.babypips.com/forexpedia/shooting-star#:~:text=A%20Shooting%20Star%20is%20a,except%20that%20it%20is%20bearish.)
 
-'isStar' function that takes an index 'l' of a candlestick in a dataset. The function calculates the differences between the high, low, open, and close values of the candlestick and checks if it's a Shooting Star or an Inverted Hammer. 
+*isStar* function that takes an index *l* of a candlestick in a dataset. The function calculates the differences between the high, low, open, and close values of the candlestick and checks if it's a Shooting Star or an Inverted Hammer. 
 If the candlestick is either of the two, the function returns 1 or 2 respectively, otherwise, it returns 0. The function uses different ratios and thresholds to determine if the candlestick meets the criteria of a Shooting Star or an Inverted Hammer.
 
 ![Shooting Star](./Media/shooting-star.png)
@@ -144,7 +144,7 @@ def isStar(l):
 
 '''
 
-### [Close to Support & Resistance](https://www.babypips.com/learn/forex/candlestick_with_support_and_resistance)
+### [Support & Resistance](https://www.babypips.com/learn/forex/candlestick_with_support_and_resistance)
 
 
 *support* and *resistance* functions check whether a given candle in a DataFrame is a valid support or resistance level. The 'support' function takes four arguments and compares the low price of the current candle with the low prices of the 'n1' candles before it and the 'n2' candles after it. 
