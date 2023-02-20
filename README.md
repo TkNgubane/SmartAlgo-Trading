@@ -57,26 +57,24 @@ import MetaTrader5 as mt5
 Connecting to your trading platform
 
 '''python
+try:     
+    my_login = 0000000
+    my_password = 'your_password'
+    my_server = 'your_platform_server'
+    my_path = "C://File Path To Your Terminal/FxPro - MetaTrader 5/terminal64.exe"
 
-    try:     
-        my_login = 0000000
-        my_password = 'your_password'
-        my_server = 'your_platform_server'
-        my_path = "C://File Path To Your Terminal/FxPro - MetaTrader 5/terminal64.exe"
+    if not mt5.initialize(path=my_path, login=my_login, server=my_server, password=my_password):
+        print("initialize() failed, error code =",mt5.last_error())
+        quit()
+    
+    authorized = mt5.login(my_login, my_password, my_server)  
 
-        if not mt5.initialize(path=my_path, login=my_login, server=my_server, password=my_password):
-            print("initialize() failed, error code =",mt5.last_error())
-            quit()
-        
-        authorized = mt5.login(my_login, my_password, my_server)  
-
-        if authorized:
-            print("Connected to Trading Account #{}".format(my_login))
-        else:
-            print("Failed to connect at account #{}, error code: {}".format(my_login, mt5.last_error()))
-    except:
-        print("\n\n\n---Could not connect to Metatrader---")
-
+    if authorized:
+        print("Connected to Trading Account #{}".format(my_login))
+    else:
+        print("Failed to connect at account #{}, error code: {}".format(my_login, mt5.last_error()))
+except:
+    print("\n\n\n---Could not connect to Metatrader---")
 '''
 
 
