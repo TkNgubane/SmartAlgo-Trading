@@ -44,12 +44,12 @@ The script will automatically place trades based on the configured settings and 
 Installing neccessary packages
 
 '''
-import pandas as pd  
-from datetime import datetime
-import time
-import pandas_ta as ta
-import pytz                                                         
-import MetaTrader5 as mt5
+>import pandas as pd  
+>from datetime import datetime
+>import time
+>import pandas_ta as ta
+>import pytz                                                         
+>import MetaTrader5 as mt5
 '''
 
 ### Login Details
