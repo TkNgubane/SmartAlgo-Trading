@@ -32,7 +32,8 @@ Overall, this trading robot is designed to operate autonomously, taking advantag
 
 The script will automatically place trades based on the configured settings and technical indicators. You can also manually place trades through the API. 
 
-Ensure that Algo Trading is enabled
+Ensure that Algo Trading is enabled.
+
 ![Algo Trading](./Media/algoTrading.JPG)
 
 
