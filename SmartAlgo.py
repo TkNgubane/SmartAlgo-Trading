@@ -187,7 +187,7 @@ def handle_sell(myPos, THRESHOLD, MARGIN):
 
 
 
-# -------------------------- Account Information --------------------------
+# -------------------------- Printing Account Information --------------------------
 def return_account_info():
     account_info = mt5.account_info()
 
@@ -204,8 +204,8 @@ def return_account_info():
     print('Margin: ' + str(margin))    
 
     return login_number, balance, equity, profit, margin
-# -----------XXX------------ Account Information -----------XXX------------
-
+# -----------XXX------------ Printing Account Information -----------XXX------------
+import config
 
 
 if __name__ == '__main__':
@@ -225,21 +225,31 @@ if __name__ == '__main__':
     # '''
     # =========================================== Trading Platform ===========================================
     try:     
-        my_login = 00000000
-        my_password = 'your_password'
-        my_server = 'your_platform_server'
-        my_path = "C://File Path To Your Terminal/FxPro - MetaTrader 5/terminal64.exe"
+        # -------------------------- Use your own account information --------------------------
+        # mylogin = 00000000
+        # mypassword = 'your_password'
+        # myserver = 'your_platform_server'
+        # mypath = "C://Paste Your File Path To The Terminal/FxPro - MetaTrader 5/terminal64.exe"
+        # -----------XXX------------ Use your own account information -----------XXX------------
 
-        if not mt5.initialize(path=my_path, login=my_login, server=my_server, password=my_password):
+
+        # my information
+        mypath = config.Myinfo().my_path
+        mylogin = config.Myinfo().my_login
+        myserver = config.Myinfo().my_server
+        mypassword = config.Myinfo().my_password
+
+
+        if not mt5.initialize(path=mypath, login=mylogin, server=myserver, password=mypassword):
             print("initialize() failed, error code =",mt5.last_error())
             quit()
         
-        authorized = mt5.login(my_login, my_password, my_server)  
+        authorized = mt5.login(mylogin, mypassword, myserver)  
 
         if authorized:
-            print("Connected to Trading Account #{}".format(my_login))
+            print("Connected to Trading Account #{}".format(mylogin))
         else:
-            print("Failed to connect at account #{}, error code: {}".format(my_login, mt5.last_error()))
+            print("Failed to connect at account #{}, error code: {}".format(mylogin, mt5.last_error()))
     except:
         print("\n\n\n---Could not connect to Metatrader---")
     # =====================XXX=================== Trading Plartform =====================XXX===================
