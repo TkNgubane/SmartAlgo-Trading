@@ -24,6 +24,7 @@ import pandas_ta as ta
 import time
 import pytz                                                         
 import MetaTrader5 as mt5
+import config
 from datetime import datetime
 
 
@@ -205,7 +206,6 @@ def return_account_info():
 
     return login_number, balance, equity, profit, margin
 # -----------XXX------------ Printing Account Information -----------XXX------------
-import config
 
 
 if __name__ == '__main__':
