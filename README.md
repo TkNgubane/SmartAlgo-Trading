@@ -32,6 +32,10 @@ Overall, this trading robot is designed to operate autonomously, taking advantag
 
 The script will automatically place trades based on the configured settings and technical indicators. You can also manually place trades through the API. 
 
+Ensure that Algo Trading is enabled
+![Algo Trading](./Media/algoTrading.JPG)
+
+
 **Please note: Trading in forex or any other financial market carries a high level of risk and may not be suitable for all investors. It is important to do your own research and consider your own financial situation before making any trades.**
 
 
