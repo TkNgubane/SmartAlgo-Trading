@@ -221,7 +221,6 @@ if __name__ == '__main__':
     MY_THRESHOLD = 30                          # points
     MY_MARGIN = 150                            # trailing stop distance =  +- 176 points
 
-
     # '''
     # =========================================== Trading Platform ===========================================
     try:     
@@ -272,7 +271,8 @@ if __name__ == '__main__':
         # -----------XXX------------- Seting up dataframe ----------XXX--------------
         
         # identifying signal rows
-        print("\nSignal Candle Number:")    
+        print("\n" + SYMBOL)
+        print("Signal Candle Number:")    
         print(len(df)-2)
 
         # -------------- Analysing Functions --------------
