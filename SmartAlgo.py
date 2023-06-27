@@ -26,12 +26,12 @@ import pytz
 import MetaTrader5 as mt5
 import config
 from datetime import datetime
-
+import msvcrt
 
 
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
-print("Current Time = ", current_time)
+print("\n\nCurrent Time = ", current_time)
 
 
 
@@ -507,13 +507,18 @@ if __name__ == '__main__':
                 print('Waiting to trailstop position ' + str(pos.ticket) + '...')
         # ----------XXX---------- Trail Stop ---------XXX----------- 
         
-
         end = datetime.now()
         end_time = end.strftime("%H:%M:%S")
         print("\nLoop Ending Time =", end_time)
         print("------------------------------------------------------------------------------------\n")
+                
+        if msvcrt.kbhit() and msvcrt.getch().decode().lower() == 'q':
+                    break
         
         time.sleep(LOOP_TIMEFRAME)
+        
 
 mt5.shutdown()
-print("*********** Trading Robot Shutdown ***********")
+print("\n\n\n")
+print("{:*^150}".format(" Trading Robot Shutdown "))      
+print("\n\n\n")
